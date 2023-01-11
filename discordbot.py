@@ -25,7 +25,7 @@ def main():
     
     for filename in os.listdir('./Cogs'):
         if filename.endswith('.py'):
-            bot.load_extension(f'Cogs.{filename[:-3]}')
+            client.load_extension(f'Cogs.{filename[:-3]}')
 
     #봇 가동
     try:
