@@ -26,7 +26,7 @@ def main():
     #모듈
     @client.event
     async def setup_hook():
-        for folder in os.listdir("modules"):
+        for folder in os.listdir('./modules'):
             if os.path.exists(os.path.join("modules", folder, "cog.py")) :
                 await client.load_extension(f"modules.{folder}.cog")
 
