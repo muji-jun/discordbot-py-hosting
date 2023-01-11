@@ -30,10 +30,6 @@ def main():
             if os.path.exists(os.path.join("modules", folder, "cog.py")) :
                 await client.load_extension(f"modules.{folder}.cog")
 
-    #토큰
-    f = open('token.txt', 'r')
-    token = f.readline()
-
     #봇 가동
     try:
         client.run(TOKEN)
