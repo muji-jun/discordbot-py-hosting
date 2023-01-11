@@ -23,12 +23,9 @@ def main():
         game = discord.Game("정상가동")
         await client.change_presence(status=discord.Status.online, activity=game)    
     
-    #모듈
-    @client.event
-    async def setup_hook():
-        for folder in os.listdir('./modules'):
-            if os.path.exists(os.path.join("modules", folder, "cog.py")) :
-                await client.load_extension(f"modules.{folder}.cog")
+    for filename in os.listdir('./Cogs'):
+    if filename.endswith('.py'):
+        bot.load_extension(f'Cogs.{filename[:-3]}')
 
     #봇 가동
     try:
