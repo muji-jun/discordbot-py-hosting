@@ -24,8 +24,8 @@ def main():
         await client.change_presence(status=discord.Status.online, activity=game)    
     
     for filename in os.listdir('./Cogs'):
-    if filename.endswith('.py'):
-        bot.load_extension(f'Cogs.{filename[:-3]}')
+        if filename.endswith('.py'):
+            bot.load_extension(f'Cogs.{filename[:-3]}')
 
     #봇 가동
     try:
